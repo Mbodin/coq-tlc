@@ -36,7 +36,7 @@ all clean _CoqProject:
 ############################################################################
 # Installation.
 
-CONTRIB := $(shell $(COQBIN)coqc -where)/user-contrib
+CONTRIB ?= $(shell $(COQBIN)coqc -where)/user-contrib
 TARGET  := $(CONTRIB)/TLC
 
 .PHONY: install uninstall

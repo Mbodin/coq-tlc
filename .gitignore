@@ -1,5 +1,7 @@
 *.vo
 *.vio
+*.vok
+*.vos
 *.vq
 *.glob
 *.v.d
@@ -12,3 +14,6 @@ _CoqProject
 *#
 README.html
 .lia.cache
+/_esy
+/node_modules
+

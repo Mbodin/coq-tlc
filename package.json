@@ -1,0 +1,63 @@
+{
+	"name": "TLC",
+	"version": "1.0",
+	"description": "A general-purpose library that provides an alternative to Coq's standard library.",
+	"license": "CeCILL-B",
+	"esy": {
+		"buildsInSource": "_build",
+		"buildEnv": {
+			"HOME": "#{self.target_dir}",
+			"COQBIN": "#{@opam/coq.bin}/",
+			"CONTRIB": "#{self.install}"
+		},
+		"build": "make",
+		"install": [
+			["make", "install"]
+		]
+	},
+	"dependencies": {
+		"@opam/coq": "8.6"
+	},
+	"resolutions": {
+		"@opam/coq": {
+			"source": "coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb",
+			"override": {
+				"version": "8.6",
+				"dependencies": {
+					"ocaml": "*",
+					"@opam/camlp5": "*",
+					"@opam/ocamlfind": "1.6.2",
+					"@opam/ocamlbuild": "*"
+				},
+				"buildsInSource": true,
+				"buildEnv": {
+					"HOME": "#{self.install}"
+				},
+				"build": [
+					[
+						"./configure",
+						"-configdir",
+						"#{self.lib}/coq/config",
+						"-prefix",
+						"#{self.install}",
+						"-mandir",
+						"#{self.man}",
+						"-docdir",
+						"#{self.doc}",
+						"-libdir",
+						"#{self.lib}/coq",
+						"-datadir",
+						"#{self.share}/coq",
+						"-coqide",
+						"no"
+					],
+					["make", "-j2"]
+				],
+				"install": [
+					["make", "install"]
+				]
+			}
+		}
+	}
+}
+

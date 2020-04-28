@@ -1,0 +1,228 @@
+{
+  "checksum": "66cdec940f8c80afa8cf154472eaa4b2",
+  "root": "TLC@link-dev:./package.json",
+  "node": {
+    "ocaml@4.4.2004@d41d8cd9": {
+      "id": "ocaml@4.4.2004@d41d8cd9",
+      "name": "ocaml",
+      "version": "4.4.2004",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/ocaml/-/ocaml-4.4.2004.tgz#sha1:9b696ae98dd3f3487699beebe617fe3ad6e5dec6"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "TLC@link-dev:./package.json": {
+      "id": "TLC@link-dev:./package.json",
+      "name": "TLC",
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [
+        "@opam/coq@github:coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb@29eee083"
+      ],
+      "devDependencies": []
+    },
+    "@opam/ocamlfind@opam:1.6.2@b5e16528": {
+      "id": "@opam/ocamlfind@opam:1.6.2@b5e16528",
+      "name": "@opam/ocamlfind",
+      "version": "opam:1.6.2",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/md5/53/530ff275d6b96e140f0d3a03ed14b68e#md5:530ff275d6b96e140f0d3a03ed14b68e",
+          "archive:http://gazagnaire.org/packages/ocamlfind.1.6.2/findlib-1.6.2.tar.gz#md5:530ff275d6b96e140f0d3a03ed14b68e",
+          "archive:http://download.camlcity.org/download/findlib-1.6.2.tar.gz#md5:530ff275d6b96e140f0d3a03ed14b68e"
+        ],
+        "opam": {
+          "name": "ocamlfind",
+          "version": "1.6.2",
+          "path": "esy.lock/opam/ocamlfind.1.6.2"
+        }
+      },
+      "overrides": [
+        {
+          "opamoverride":
+            "esy.lock/overrides/opam__s__ocamlfind_opam__c__1.6.2_opam_override"
+        }
+      ],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@opam/num@opam:0@fa7a5049",
+        "@opam/conf-m4@opam:1@3b2b148a", "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@opam/num@opam:0@fa7a5049"
+      ]
+    },
+    "@opam/ocamlbuild@opam:0.14.0@6ac75d03": {
+      "id": "@opam/ocamlbuild@opam:0.14.0@6ac75d03",
+      "name": "@opam/ocamlbuild",
+      "version": "opam:0.14.0",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/sha256/87/87b29ce96958096c0a1a8eeafeb6268077b2d11e1bf2b3de0f5ebc9cf8d42e78#sha256:87b29ce96958096c0a1a8eeafeb6268077b2d11e1bf2b3de0f5ebc9cf8d42e78",
+          "archive:https://github.com/ocaml/ocamlbuild/archive/0.14.0.tar.gz#sha256:87b29ce96958096c0a1a8eeafeb6268077b2d11e1bf2b3de0f5ebc9cf8d42e78"
+        ],
+        "opam": {
+          "name": "ocamlbuild",
+          "version": "0.14.0",
+          "path": "esy.lock/opam/ocamlbuild.0.14.0"
+        }
+      },
+      "overrides": [
+        {
+          "opamoverride":
+            "esy.lock/overrides/opam__s__ocamlbuild_opam__c__0.14.0_opam_override"
+        }
+      ],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [ "ocaml@4.4.2004@d41d8cd9" ]
+    },
+    "@opam/num@opam:0@fa7a5049": {
+      "id": "@opam/num@opam:0@fa7a5049",
+      "name": "@opam/num",
+      "version": "opam:0",
+      "source": {
+        "type": "install",
+        "source": [ "no-source:" ],
+        "opam": {
+          "name": "num",
+          "version": "0",
+          "path": "esy.lock/opam/num.0"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@opam/base-num@opam:base@ad7c41e4",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@opam/base-num@opam:base@ad7c41e4"
+      ]
+    },
+    "@opam/coq@github:coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb@29eee083": {
+      "id":
+        "@opam/coq@github:coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb@29eee083",
+      "name": "@opam/coq",
+      "version": "github:coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:coq/coq#0d1438851ba3a0b9f76847abc42f3bf8ad26c4cb"
+        ]
+      },
+      "overrides": [
+        {
+          "version": "8.6",
+          "dependencies": {
+            "ocaml": "*",
+            "@opam/camlp5": "*",
+            "@opam/ocamlfind": "1.6.2",
+            "@opam/ocamlbuild": "*"
+          },
+          "buildsInSource": true,
+          "buildEnv": { "HOME": "#{self.install}" },
+          "build": [
+            [
+              "./configure", "-configdir", "#{self.lib}/coq/config",
+              "-prefix", "#{self.install}", "-mandir", "#{self.man}",
+              "-docdir", "#{self.doc}", "-libdir", "#{self.lib}/coq",
+              "-datadir", "#{self.share}/coq", "-coqide", "no"
+            ],
+            [ "make", "-j2" ]
+          ],
+          "install": [ [ "make", "install" ] ]
+        }
+      ],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@opam/ocamlfind@opam:1.6.2@b5e16528",
+        "@opam/ocamlbuild@opam:0.14.0@6ac75d03",
+        "@opam/camlp5@opam:7.11@6bcc30b9"
+      ],
+      "devDependencies": []
+    },
+    "@opam/conf-m4@opam:1@3b2b148a": {
+      "id": "@opam/conf-m4@opam:1@3b2b148a",
+      "name": "@opam/conf-m4",
+      "version": "opam:1",
+      "source": {
+        "type": "install",
+        "source": [ "no-source:" ],
+        "opam": {
+          "name": "conf-m4",
+          "version": "1",
+          "path": "esy.lock/opam/conf-m4.1"
+        }
+      },
+      "overrides": [],
+      "dependencies": [ "@esy-ocaml/substs@0.0.1@d41d8cd9" ],
+      "devDependencies": []
+    },
+    "@opam/camlp5@opam:7.11@6bcc30b9": {
+      "id": "@opam/camlp5@opam:7.11@6bcc30b9",
+      "name": "@opam/camlp5",
+      "version": "opam:7.11",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/md5/be/be98fa3f9a2df6958a8c7b8b60effc4d#md5:be98fa3f9a2df6958a8c7b8b60effc4d",
+          "archive:https://github.com/camlp5/camlp5/archive/rel711.tar.gz#md5:be98fa3f9a2df6958a8c7b8b60effc4d"
+        ],
+        "opam": {
+          "name": "camlp5",
+          "version": "7.11",
+          "path": "esy.lock/opam/camlp5.7.11"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [ "ocaml@4.4.2004@d41d8cd9" ]
+    },
+    "@opam/base-num@opam:base@ad7c41e4": {
+      "id": "@opam/base-num@opam:base@ad7c41e4",
+      "name": "@opam/base-num",
+      "version": "opam:base",
+      "source": {
+        "type": "install",
+        "source": [ "no-source:" ],
+        "opam": {
+          "name": "base-num",
+          "version": "base",
+          "path": "esy.lock/opam/base-num.base"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.4.2004@d41d8cd9", "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [ "ocaml@4.4.2004@d41d8cd9" ]
+    },
+    "@esy-ocaml/substs@0.0.1@d41d8cd9": {
+      "id": "@esy-ocaml/substs@0.0.1@d41d8cd9",
+      "name": "@esy-ocaml/substs",
+      "version": "0.0.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@esy-ocaml/substs/-/substs-0.0.1.tgz#sha1:59ebdbbaedcda123fc7ed8fb2b302b7d819e9a46"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  }
+}
