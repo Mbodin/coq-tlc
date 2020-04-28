@@ -16,7 +16,7 @@
 		]
 	},
 	"dependencies": {
-		"@opam/coq": "8.6"
+		"@opam/coq": ">=8.6"
 	},
 	"resolutions": {
 		"@opam/coq": {
