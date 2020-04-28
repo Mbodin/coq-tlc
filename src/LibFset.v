@@ -43,7 +43,7 @@ Definition from_list L :=
 
 End Operations.
 
-Implicit Arguments empty [[A]].
+Arguments empty {A}.
 
 (** Notations *)
 
@@ -192,7 +192,7 @@ Definition from_list L :=
 
 End Operations.
 
-Implicit Arguments empty [[A]].
+Arguments empty {A}.
 
 (** Notations *)
 

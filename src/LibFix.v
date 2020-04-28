@@ -1584,7 +1584,7 @@ Proof using.
   intros_all~. apply~ contractive_noinv_to_contractive.
 Qed.
 
-Implicit Arguments FixValMod_fix [I A [IA] E F x].
+Arguments FixValMod_fix [I A] _ {IA} [E F x].
 
 (** Same for Leibnitz equality *)
 
@@ -1654,7 +1654,7 @@ Proof using.
    intros_all. forwards~ Z: Contr. intros. forwards*: H.
 Qed.
 
-Implicit Arguments FixValModMut2_fix [I A1 A2 [IA1] [IA2] F1 F2 x1 x2].
+Arguments FixValModMut2_fix [I A1 A2] {IA1 IA2} _ _ _ [F1 F2 x1 x2].
 
 (* todo: express continuity with two invariants *)
 
@@ -1727,7 +1727,7 @@ Lemma FixFun_fix_partial_inv : forall A (R:binary A) (P:A->Prop) B
   (forall x, P x -> S x (f x)).
 Proof using. intros. applys* (@FixFunMod_fix_partial_inv A R). intros_all. subst~. Qed.
 
-Implicit Arguments FixFun_fix_partial_inv [A B [IB] F f].
+Arguments FixFun_fix_partial_inv [A] _ _ [B] _ {IB} [F f].
 
 Lemma FixFun_fix_inv : forall A (R:binary A) B
   (S:A->B->Prop) {IB:Inhab B} (F:(A->B)->(A->B)) (f:A->B),
@@ -1739,7 +1739,7 @@ Lemma FixFun_fix_inv : forall A (R:binary A) B
   (forall x, S x (f x)).
 Proof using. intros. forwards~ [K1 K2]: (FixFun_fix_partial_inv R pred_true S). subst~. Qed.
 
-Implicit Arguments FixFun_fix_inv [A B [IB] F f].
+Arguments FixFun_fix_inv [A] _ [B] _ {IB} [F f].
 
 Lemma FixFun_fix_partial : forall A (R:binary A) (P:A->Prop)
    B {IB:Inhab B} (F:(A->B)->(A->B)) (f:A->B),
@@ -1750,7 +1750,7 @@ Proof using.
   apply~ rec_contractive_noinv_to_rec_contractive. subst~.
 Qed.
 
-Implicit Arguments FixFun_fix_partial [A B [IB] F f].
+Arguments FixFun_fix_partial [A] _ _ [B] {IB} [F f].
 
 Lemma FixFun_fix : forall A (R:binary A) B {IB:Inhab B} (F:(A->B)->(A->B))
    (f:A->B),
@@ -1764,7 +1764,7 @@ Proof using.
   hnf; autos*.
 Qed.
 
-Implicit Arguments FixFun_fix [A B [IB] F f].
+Arguments FixFun_fix [A] _ [B] {IB} [F f].
 
 (* todo: comment *)
 
@@ -1813,7 +1813,7 @@ Proof using.
    introv Rji. rewrite SimE in Equ. apply~ Equ.
 Qed.
 
-Implicit Arguments FixFunMod_mixed_partial_inv [I A B [IB] F f].
+Arguments FixFunMod_mixed_partial_inv [I A B] _ _ _ _ _ {IB} [F f].
 
 Lemma FixFunMod_mixed_partial : forall I A B
   (M:family I B) (R:binary A) (P:A->Prop)
@@ -1828,7 +1828,7 @@ Proof using.
   apply~ mixed_contractive_noinv_to_mixed_contractive.
 Qed.
 
-Implicit Arguments FixFunMod_mixed_partial [I A B [IB] F f].
+Arguments FixFunMod_mixed_partial [I A B] _ _ _ _ {IB} [F f].
 
 
 (** -------- Corecursive functions --------- *)
@@ -1879,7 +1879,7 @@ Proof using.
   subst~.
 Qed.
 
-Implicit Arguments FixFunMod_corec [I A B [IB] E F f].
+Arguments FixFunMod_corec [I A B] _ _ {IB} [E F f].
 
 Lemma FixFunMod_corec_total : forall I A B (M:family I B)
   {IB:Inhab B} (E:B->B->Prop)
@@ -1894,7 +1894,7 @@ Proof using.
   intros_all~.
 Qed.
 
-Implicit Arguments FixFunMod_corec_total [I A B [IB] E F f].
+Arguments FixFunMod_corec_total [I A B] _ {IB} [E F f].
 
 
 (** -------- Recursive functions of arity 2 --------- *)
@@ -1970,7 +1970,7 @@ Proof using.
   subst~.
 Qed.
 
-Implicit Arguments FixFun2_fix_partial [A1 A2 B [IB] F f].
+Arguments FixFun2_fix_partial [A1 A2] _ _ [B] {IB} [F f].
 
 Lemma FixFun2_fix : forall A1 A2 (R:binary (A1*A2))
   B {IB:Inhab B} F (f:A1->A2->B),
@@ -1981,7 +1981,7 @@ Lemma FixFun2_fix : forall A1 A2 (R:binary (A1*A2))
   (forall x1 x2, f x1 x2 = F f x1 x2).
 Proof using. intros. applys* (FixFun2_fix_partial R (fun _ _ => True)). Qed.
 
-Implicit Arguments FixFun2_fix [A1 A2 B IB F f].
+Arguments FixFun2_fix [A1 A2] _ [B IB F f].
 
 Lemma FixFun2Mod_corec : forall I A1 A2 B (M:family I B) {IB:Inhab B}
   (E:binary B) F (f:A1->A2->B),
@@ -2001,7 +2001,7 @@ Proof using.
   subst f. intros x1 x2. apply~ (H1 (x1,x2)).
 Qed.
 
-Implicit Arguments FixFun2Mod_corec [I A1 A2 B [IB] E F f].
+Arguments FixFun2Mod_corec [I A1 A2 B] _ {IB} [E F f].
 
 (** -------- Recursive functions of arity 3 --------- *)
 
@@ -2016,7 +2016,7 @@ Lemma FixFun3_fix_partial : forall A1 A2 A3 (R:binary (A1*A2*A3)) (P:A1->A2->A3-
   (forall x1 x2 x3, P x1 x2 x3 -> f x1 x2 x3 = F f x1 x2 x3).
 Admitted. (* symmetric to the above, only the arity changes *)
 
-Implicit Arguments FixFun3_fix_partial [A1 A2 A3 B IB F f].
+Arguments FixFun3_fix_partial [A1 A2 A3] _ _ [B IB F f].
 
 (** -------- Recursive functions of arity 4 --------- *)
 
@@ -2031,7 +2031,7 @@ Lemma FixFun4_fix_partial : forall A1 A2 A3 A4 (R:binary (A1*A2*A3*A4)) (P:A1->A
   (forall x1 x2 x3 x4, P x1 x2 x3 x4 -> f x1 x2 x3 x4 = F f x1 x2 x3 x4).
 Admitted. (* symmetric to the above, only the arity changes *)
 
-Implicit Arguments FixFun4_fix_partial [A1 A2 A3 A4 B IB F f].
+Arguments FixFun4_fix_partial [A1 A2 A3 A4] _ _ [B IB F f].
 
 (** -------- Recursive functions of arity 5 --------- *)
 
@@ -2046,7 +2046,7 @@ Lemma FixFun5_fix_partial : forall A1 A2 A3 A4 A5 (R:binary (A1*A2*A3*A4*A5)) (P
   (forall x1 x2 x3 x4 x5, P x1 x2 x3 x4 x5 -> f x1 x2 x3 x4 x5 = F f x1 x2 x3 x4 x5).
 Admitted. (* symmetric to the above, only the arity changes *)
 
-Implicit Arguments FixFun5_fix_partial [A1 A2 A3 A4 A5 B IB F f].
+Arguments FixFun5_fix_partial [A1 A2 A3 A4 A5] _ _ [B IB F f].
 
 
 

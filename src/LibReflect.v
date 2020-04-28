@@ -572,7 +572,7 @@ Lemma xor_cases : forall (b1 b2 : bool),
             \/ (b1 = false /\ b2 = true).
 Proof using. tautob; auto_false*. Qed.
 
-Implicit Arguments xor_cases [b1 b2].
+Arguments xor_cases [b1 b2].
 
 
 (* ---------------------------------------------------------------------- *)
@@ -679,7 +679,7 @@ Class Decidable (P:Prop) := decidable_make {
   decide_spec : decide = isTrue P }.
 
 Hint Rewrite @decide_spec : rew_refl.
-Implicit Arguments decide [[Decidable]].
+Arguments decide _ {Decidable}.
 Extraction Inline decide.
 
 (** Notation [ifb P then x else y] can be used for
@@ -935,7 +935,7 @@ Class Pickable (A : Type) (P : A -> Prop) := pickable_make {
   pick : A;
   pick_spec : (exists a, P a) -> P pick }.
 
-Implicit Arguments pick [A [Pickable]].
+Arguments pick [A] _ {Pickable}.
 Extraction Inline pick.
 
 (** Instances of pickable *)

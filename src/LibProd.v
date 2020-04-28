@@ -66,8 +66,8 @@ Hint Immediate eq_prod2 eq_prod3 eq_prod4.
 
 (** [fst] and [snd] are defined in the standard library *)
 
-Implicit Arguments fst [[A] [B]].
-Implicit Arguments snd [[A] [B]].
+Arguments fst {A B}.
+Arguments snd {A B}.
 
 
 (* ---------------------------------------------------------------------- *)
@@ -209,16 +209,16 @@ Definition unproj51 f : A1*A2*A3*A4*A5 -> A1*A2*A3*A4*A5 -> B :=
   (* TODO: complete *)
 End Unproj.
 
-Implicit Arguments unproj21 [ A1 B ].
-Implicit Arguments unproj22 [ A2 B ].
-Implicit Arguments unproj31 [ A1 B ].
-Implicit Arguments unproj32 [ A2 B ].
-Implicit Arguments unproj33 [ A3 B ].
-Implicit Arguments unproj41 [ A1 B ].
-Implicit Arguments unproj42 [ A2 B ].
-Implicit Arguments unproj43 [ A3 B ].
-Implicit Arguments unproj44 [ A4 B ].
-Implicit Arguments unproj51 [ A1 B ].
+Arguments unproj21 [A1] _ [B].
+Arguments unproj22 _ [A2] [B].
+Arguments unproj31 [A1] _ _ [B].
+Arguments unproj32 _ [A2] _ [B].
+Arguments unproj33 _ _ [A3] [B].
+Arguments unproj41 [A1] _ _ _ [B].
+Arguments unproj42 _ [A2] _ _ [B].
+Arguments unproj43 _ _ [A3] _ [B].
+Arguments unproj44 _ _ _ [A4] [B].
+Arguments unproj51 [A1] _ _ _ _ [B].
 
 (** Unfolding *)
 

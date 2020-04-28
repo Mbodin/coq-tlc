@@ -4,6 +4,7 @@
 **************************************************************************)
 
 Set Implicit Arguments.
+Require Extraction.
 Require Import LibTactics.
 Require Export LibAxioms LibEqual.
 Generalizable Variables A B P.
@@ -762,7 +763,7 @@ Definition pred_compatible A (E:A->A->Prop) (Q:A->Prop) :=
 Definition ex_intro' A (x:A) (P:A->Prop) (H:P x) :=
   @ex_intro A P x H.
 
-Implicit Arguments ex_intro' [A [P] [H]].
+Arguments ex_intro' [A] _ {P H}.
 
 (* ---------------------------------------------------------------------- *)
 (** * Properties of unique existentials *)
@@ -949,18 +950,18 @@ Proof using. introv H. split; intros; forwards*: H. Qed.
 
 End ProjLemma.
 
-Implicit Arguments proj_lemma_1 [A1 P Q].
-Implicit Arguments proj_lemma_2 [A1 A2 P Q].
-Implicit Arguments proj_lemma_3 [A1 A2 A3 P Q].
-Implicit Arguments proj_lemma_4 [A1 A2 A3 A4 P Q].
-Implicit Arguments proj_lemma_5 [A1 A2 A3 A4 A5 P Q].
-Implicit Arguments proj_lemma_6 [A1 A2 A3 A4 A5 A6 P Q].
+Arguments proj_lemma_1 [A1 P Q].
+Arguments proj_lemma_2 [A1 A2 P Q].
+Arguments proj_lemma_3 [A1 A2 A3 P Q].
+Arguments proj_lemma_4 [A1 A2 A3 A4 P Q].
+Arguments proj_lemma_5 [A1 A2 A3 A4 A5 P Q].
+Arguments proj_lemma_6 [A1 A2 A3 A4 A5 A6 P Q].
 (* Commented out for efficiency of compilation
-Implicit Arguments proj_lemma_7 [A1 A2 A3 A4 A5 A6 A7 P Q].
-Implicit Arguments proj_lemma_8 [A1 A2 A3 A4 A5 A6 A7 A8 P Q].
-Implicit Arguments proj_lemma_9 [A1 A2 A3 A4 A5 A6 A7 A8 A9 P Q].
-Implicit Arguments proj_lemma_10 [A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 P Q].
-Implicit Arguments proj_lemma_11 [A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 P Q].
+Arguments proj_lemma_7 [A1 A2 A3 A4 A5 A6 A7 P Q].
+Arguments proj_lemma_8 [A1 A2 A3 A4 A5 A6 A7 A8 P Q].
+Arguments proj_lemma_9 [A1 A2 A3 A4 A5 A6 A7 A8 A9 P Q].
+Arguments proj_lemma_10 [A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 P Q].
+Arguments proj_lemma_11 [A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 P Q].
 *)
 
 

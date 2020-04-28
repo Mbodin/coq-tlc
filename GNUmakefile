@@ -7,7 +7,7 @@
 .PHONY: all clean install uninstall
 
 all clean install uninstall:
-	@ $(MAKE) -C src $@
+	@+export HOME=`pwd`; $(MAKE) -C src $@
 
 # -------------------------------------------------------------------------
 

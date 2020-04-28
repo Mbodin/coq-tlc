@@ -376,43 +376,43 @@ End Properties.
 (** Lemmas with premises and operators in the conclusion
     need additional implicit arguments *)
 
-Implicit Arguments is_empty_inv [[A] [T] [BI] [BE] [Is_empty_inv] x E].
-Implicit Arguments is_nonempty_prove [[A] [T] [BE] [Is_nonempty_prove] x E].
+Arguments is_empty_inv {A T BI BE Is_empty_inv} [x E].
+Arguments is_nonempty_prove {A T} _ {BE Is_nonempty_prove} [x E].
 
-Implicit Arguments in_single [A T [BI] [BS] [In_single] [x] [y]].
-Implicit Arguments is_single_inv [[A] [T] [BI] [BS] [Is_single_inv] x E].
+Arguments in_single [A T] {BI BS In_single x y}.
+Arguments is_single_inv {A T BI BS Is_single_inv} [x] _ [E].
 
-Implicit Arguments in_inter [[A] [T] [BI] [BN] [In_inter] x E F].
-Implicit Arguments in_inter_inv [[A] [T] [BI] [BN] [In_inter_inv] x E F].
+Arguments in_inter {A T BI BN In_inter} [x E F].
+Arguments in_inter_inv {A T BI BN In_inter_inv} [x E F].
 
-Implicit Arguments notin_inter_l [[A] [T] [BI] [BN] [Notin_inter_l] x E F].
-Implicit Arguments notin_inter_r [[A] [T] [BI] [BN] [Notin_inter_r] x E F].
-Implicit Arguments notin_inter_inv [[A] [T] [BI] [BN] [Notin_inter_inv] x E F].
+Arguments notin_inter_l {A T BI BN Notin_inter_l} [x E F].
+Arguments notin_inter_r {A T BI BN Notin_inter_r} [x E F].
+Arguments notin_inter_inv {A T BI BN Notin_inter_inv} [x E F].
 
-Implicit Arguments in_union_l [[A] [T] [BI] [BU] [In_union_l] x E F].
-Implicit Arguments in_union_r [[A] [T] [BI] [BU] [In_union_r] x E F].
-Implicit Arguments in_union_inv [[A] [T] [BI] [BU] [In_union_inv] x E F].
+Arguments in_union_l {A T BI BU In_union_l} [x E F].
+Arguments in_union_r {A T BI BU In_union_r} [x E F].
+Arguments in_union_inv {A T BI BU In_union_inv} [x E F].
 
-Implicit Arguments notin_union [[A] [T] [BI] [BU] [Notin_union] x E F].
-Implicit Arguments notin_union_inv [[A] [T] [BI] [BU] [Notin_union_inv] x E F].
+Arguments notin_union {A T BI BU Notin_union} [x E F].
+Arguments notin_union_inv {A T BI BU Notin_union_inv} [x E F].
 
-Implicit Arguments incl_prove [[A] [T] [BI] [BL] [Incl_prove] E F].
-Implicit Arguments incl_inv [[A] [T] [BI] [BL] [Incl_inv] x E F].
-Implicit Arguments incl_trans [[T] [BL] [Incl_trans] x z].
-Implicit Arguments incl_empty_inv [[T] [BL] [Incl_empty_inv] E].
+Arguments incl_prove {A T BI BL Incl_prove} [E F].
+Arguments incl_inv {A T BI BL Incl_inv} [x E F].
+Arguments incl_trans {T BL Incl_trans} _ [x z].
+Arguments incl_empty_inv {T} _ {BL Incl_empty_inv} [E].
 
-Implicit Arguments incl_union_l [[T] [BL] [Incl_union_l] E F G].
-Implicit Arguments incl_union_r [[T] [BL] [Incl_union_r] E F G].
-Implicit Arguments incl_inter [[T] [BL] [Incl_inter] E F G].
-Implicit Arguments incl_inter_inv [[T] [BL] [Incl_inter_inv] E F G].
+Arguments incl_union_l {T} _ {BL Incl_union_l} [E F G].
+Arguments incl_union_r {T} _ {BL Incl_union_r} [E F G].
+Arguments incl_inter {T} _ {BL Incl_inter} [E F G].
+Arguments incl_inter_inv {T} _ {BL Incl_inter_inv} [E F G].
 
-Implicit Arguments union_empty_inv [[T] [BU] [Union_empty_inv] E F].
+Arguments union_empty_inv {T} _ {BU Union_empty_inv} [E F].
 
-Implicit Arguments disjoint_sym [[T] [BD] [Disjoint_sym]].
-Implicit Arguments disjoint_prove [[A] [T] [BI] [BD] [Disjoint_prove] E F].
-Implicit Arguments disjoint_inv [[A] [T] [BI] [BD] [Disjoint_inv] x E F].
-Implicit Arguments disjoint_single_l_eq [[A] [T] [BI] [BS] [BD] [Disjoint_single_l_eq]].
-Implicit Arguments disjoint_single_r_eq [[A] [T] [BI] [BS] [BD] [Disjoint_single_r_eq]].
+Arguments disjoint_sym {T BD Disjoint_sym}.
+Arguments disjoint_prove {A T BI BD Disjoint_prove} [E F].
+Arguments disjoint_inv {A T BI BD Disjoint_inv} [x E F].
+Arguments disjoint_single_l_eq {A T BI BS BD Disjoint_single_l_eq}.
+Arguments disjoint_single_r_eq {A T BI BS BD Disjoint_single_r_eq}.
 
 
 (* ---------------------------------------------------------------------- *)

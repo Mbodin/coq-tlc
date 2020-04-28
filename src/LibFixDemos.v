@@ -405,7 +405,7 @@ Definition Zero zero n :=
 
 Definition zero := FixFun Zero.
 
-Implicit Arguments FixFun_fix_partial_inv [A B F f].
+Arguments FixFun_fix_partial_inv [A] _ _ [B] _ _ [F f].
 
 Lemma zero_fix : forall x, zero x = Zero zero x
               /\ forall x, zero x = 0.

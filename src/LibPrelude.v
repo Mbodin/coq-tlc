@@ -155,9 +155,9 @@ Notation "x = y" := (eq x y) : type_scope.
 Notation "x <> y :> A" := (~ @eq A x y) : type_scope.
 Notation "x <> y" := (~ eq x y) : type_scope.
 
-Implicit Arguments eq_ind [A].
-Implicit Arguments eq_rec [A].
-Implicit Arguments eq_rect [A].
+Arguments eq_ind [A].
+Arguments eq_rec [A].
+Arguments eq_rect [A].
 
 Hint Constructors eq : core.
 
@@ -167,7 +167,7 @@ Inductive eq_dep (A : Type) (P : A -> Type) (p : A) (x : P p)
   : forall q, P q -> Prop :=
   | eq_dep_refl : eq_dep P p x p x.
 
-Implicit Arguments eq_dep [A P].
+Arguments eq_dep [A P].
 
 Hint Constructors eq_dep : core.
 

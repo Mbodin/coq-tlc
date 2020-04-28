@@ -57,7 +57,7 @@ Proof using.
   destruct (f x). simpls. destruct Heq using eq_indd. apply HR.
 Qed.
 
-Implicit Arguments dependent_func_choice [A B].
+Arguments dependent_func_choice [A B].
 
 
 (* ---------------------------------------------------------------------- *)
@@ -119,7 +119,7 @@ Proof using.
    apply~ (ex_unique_to_at_most_one (H y)).
  Qed.
 
-Implicit Arguments dependent_func_unique_choice [A B].
+Arguments dependent_func_unique_choice [A B].
 
 (* ---------------------------------------------------------------------- *)
 (** ** Guarded functional unique choice *)

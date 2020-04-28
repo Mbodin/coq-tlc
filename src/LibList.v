@@ -16,8 +16,8 @@ Local Open Scope comp_scope.
 (* ********************************************************************** *)
 (** Fixing implicit arguments *)
 
-Implicit Arguments nil [[A]].
-Implicit Arguments cons [[A]].
+Arguments nil {A}.
+Arguments cons {A}.
 
 
 (* ********************************************************************** *)
@@ -266,21 +266,21 @@ End Operations.
 Definition fold A B (m:monoid_def B) (f:A->B) (L:list A) : B :=
   fold_right (fun x acc => monoid_oper m (f x) acc) (monoid_neutral m) L.
 
-Implicit Arguments fold_left [[A] [B]].
-Implicit Arguments fold_right [[A] [B]].
-Implicit Arguments append [[A]].
-Implicit Arguments concat [[A]].
-Implicit Arguments rev [[A]].
-Implicit Arguments length [[A]].
-Implicit Arguments mem [[A]].
-Implicit Arguments remove [[A] [CA]].
-Implicit Arguments removes [[A] [CA]].
-Implicit Arguments take_drop_last [[A] [IA]].
-Implicit Arguments nth_def [[A]].
-Implicit Arguments nth [[A] [IA]].
-Implicit Arguments update [[A]].
-Implicit Arguments make [[A]].
-Implicit Arguments fold [[A] [B]].
+Arguments fold_left {A B}.
+Arguments fold_right {A B}.
+Arguments append {A}.
+Arguments concat {A}.
+Arguments rev {A}.
+Arguments length {A}.
+Arguments mem {A}.
+Arguments remove {A CA}.
+Arguments removes {A CA}.
+Arguments take_drop_last {A IA}.
+Arguments nth_def {A}.
+Arguments nth {A IA}.
+Arguments update {A}.
+Arguments make {A}.
+Arguments fold {A B}.
 
 (* todo: implicit arguments for the other functions *)
 
@@ -871,8 +871,8 @@ Proof using.
 Qed.
 
 
-Implicit Arguments length_zero_inv [A l].
-Implicit Arguments take_struct [A].
+Arguments length_zero_inv [A l].
+Arguments take_struct [A].
 
 
 Module TakeInt. (* TODO: move to LibListZ *)
@@ -941,8 +941,8 @@ Qed.
 
 End TakeDropLastProperties.
 
-Implicit Arguments take_drop_last_spec [[IA]].
-Implicit Arguments take_drop_last_length [[IA]].
+Arguments take_drop_last_spec _ {IA}.
+Arguments take_drop_last_length _ {IA}.
 
 
 (* ---------------------------------------------------------------------- *)
@@ -988,8 +988,8 @@ Proof using. intros. apply nth_def_succ. Qed.
 
 End nthProperties.
 
-Implicit Arguments nth_zero [A [IA]].
-Implicit Arguments nth_succ [A [IA]].
+Arguments nth_zero [A] {IA}.
+Arguments nth_succ [A] {IA}.
 
 
 (* ---------------------------------------------------------------------- *)
@@ -1153,10 +1153,10 @@ Fixpoint remove_assoc k l : list (A*B) :=
 
 End Assoc.
 
-Implicit Arguments assoc [[A] [B] [IB] [CA]].
-Implicit Arguments mem_assoc [[A] [B]].
-Implicit Arguments keys [[A] [B]].
-Implicit Arguments remove_assoc [[A] [B] [CA]].
+Arguments assoc {A B IB CA}.
+Arguments mem_assoc {A B}.
+Arguments keys {A B}.
+Arguments remove_assoc {A B CA}.
 
 
 (* ---------------------------------------------------------------------- *)
@@ -1677,16 +1677,16 @@ Proof using. introv P. destruct~ l. false P. simpl. rew_refl*. Qed.
 
 End Inversions.
 
-Implicit Arguments last_eq_nil_inv [A a l].
-Implicit Arguments nil_eq_last_inv [A a l].
-Implicit Arguments rev_eq_nil_inv [A l].
-Implicit Arguments nil_eq_rev_inv [A l].
-Implicit Arguments app_eq_nil_inv [A l1 l2].
-Implicit Arguments nil_eq_app_inv [A l1 l2].
-Implicit Arguments app_rev_eq_nil_inv [A l1 l2].
-Implicit Arguments nil_eq_app_rev_inv [A l1 l2].
-Implicit Arguments nil_eq_last_val_app_inv [A x l1 l2].
-Implicit Arguments cons_eq_last_val_app_inv [A x y l1 l2 l].
+Arguments last_eq_nil_inv [A a l].
+Arguments nil_eq_last_inv [A a l].
+Arguments rev_eq_nil_inv [A l].
+Arguments nil_eq_rev_inv [A l].
+Arguments app_eq_nil_inv [A l1 l2].
+Arguments nil_eq_app_inv [A l1 l2].
+Arguments app_rev_eq_nil_inv [A l1 l2].
+Arguments nil_eq_app_rev_inv [A l1 l2].
+Arguments nil_eq_last_val_app_inv [A x l1 l2].
+Arguments cons_eq_last_val_app_inv [A x y l1 l2 l].
 
 
 (* ---------------------------------------------------------------------- *)
@@ -1721,7 +1721,7 @@ Qed.
 
 End ListSub.
 
-Implicit Arguments list_sub [[A]].
+Arguments list_sub {A}.
 Hint Constructors list_sub.
 Hint Resolve list_sub_wf : wf.
 
@@ -2095,7 +2095,7 @@ Proof using. introv I. induction l; constructors~. Qed.
 
 End PropProperties2.
 
-Implicit Arguments Forall2_last_inv [A1 A2 P l1 r' x1].
+Arguments Forall2_last_inv [A1 A2 P l1 r' x1].
 
 (* todo : inversion lemmas for other predicates *)
 
@@ -2111,7 +2111,7 @@ Proof using.
     apply* Forall2_cons.
 Qed.
 
-Implicit Arguments map_partial_inv [A B f lx ly].
+Arguments map_partial_inv [A B f lx ly].
 
 
 (* ---------------------------------------------------------------------- *)
@@ -2278,7 +2278,7 @@ Proof using.
    forwards* [n ?]: IHl.
 Qed.
 
-Implicit Arguments mem_Nth [l x].
+Arguments mem_Nth [l x].
 
 Lemma mem_nth : forall l x,
   mem x l -> exists n, nth n l = x.

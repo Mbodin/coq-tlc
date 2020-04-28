@@ -39,7 +39,7 @@ Parameter read : forall `{Comparable K} `{Inhab V}, heap K V -> K -> V.
 Parameter read_option : forall `{Comparable K} V, heap K V -> K -> option V.
 Parameter rem : forall `{Comparable K} V, heap K V -> K -> heap K V.
 
-Implicit Arguments empty [[K] [V]].
+Arguments empty {K V}.
 
 
 (***********************************************************)
@@ -146,7 +146,7 @@ Fixpoint read_option (l : heap K V) k :=
 
 End HeapDefs.
 
-Implicit Arguments empty [[K] [V]].
+Arguments empty {K V}.
 
 
 Section HeapParameters.

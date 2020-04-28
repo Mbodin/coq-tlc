@@ -79,7 +79,7 @@ Parameter get_def :
 
 End Definitions.
 
-Implicit Arguments empty [A].
+Arguments empty [A].
 
 End EnvOpsSig.
 
@@ -161,7 +161,7 @@ Proof using. reflexivity. Qed.
 
 End Concrete.
 
-Implicit Arguments empty [A].
+Arguments empty [A].
 
 End EnvOps.
 
@@ -763,13 +763,13 @@ Qed.
 
 End OkProperties.
 
-Implicit Arguments ok_push_inv [A E x v].
-Implicit Arguments ok_concat_inv [A E F].
-Implicit Arguments ok_remove [A F E G].
-Implicit Arguments ok_map [A E f].
-Implicit Arguments ok_middle_inv_l [A E F x v].
-Implicit Arguments ok_middle_inv_r [A E F x v].
-Implicit Arguments ok_middle_inv [A E F x v].
+Arguments ok_push_inv [A E x v].
+Arguments ok_concat_inv [A E F].
+Arguments ok_remove [A F E G].
+Arguments ok_map [A] _ [E f].
+Arguments ok_middle_inv_l [A E F x v].
+Arguments ok_middle_inv_r [A E F x v].
+Arguments ok_middle_inv [A E F x v].
 
 
 (** Automation *)

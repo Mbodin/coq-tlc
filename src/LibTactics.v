@@ -289,7 +289,7 @@ Ltac ltac_database_get D T :=
 (* Note for a possible alternative implementation of the ltac_database_token:
    Inductive Ltac_database : Type :=
      | ltac_database : forall A, A -> Ltac_database.
-   Implicit Arguments ltac_database [A].
+   Arguments ltac_database [A].
 *)
 
 (* ---------------------------------------------------------------------- *)

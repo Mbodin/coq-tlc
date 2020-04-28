@@ -9,8 +9,8 @@ Generalizable Variables A.
 
 (** Fixing implicit arguments *)
 
-Implicit Arguments Some [[A]].
-Implicit Arguments None [[A]].
+Arguments Some {A}.
+Arguments None {A}.
 
 
 (* ********************************************************************** *)
@@ -101,7 +101,7 @@ Lemma apply_on_inv : forall A B (f : A->option B) x y,
   exists z, x = Some z /\ f z = Some y.
 Proof using. destruct x; simpl; introv H; inverts* H. Qed.
 
-Implicit Arguments apply_on_inv [A B f x y].
+Arguments apply_on_inv [A B f x y].
 
 Lemma apply_on_inv_none : forall A B (f : A->option B) x,
   apply_on x f = None ->
@@ -113,14 +113,14 @@ Lemma map_inv : forall A B (f : A->B) x y,
   exists z, x = Some z /\ y = f z.
 Proof using. destruct x; simpl; introv H; inverts* H. Qed.
 
-Implicit Arguments map_inv [A B f x y].
+Arguments map_inv [A B f x y].
 
 Lemma map_on_inv : forall A B (f : A->B) x y,
   map_on x f = Some y ->
   exists z, x = Some z /\ y = f z.
 Proof using. destruct x; simpl; introv H; inverts* H. Qed.
 
-Implicit Arguments map_on_inv [A B f x y].
+Arguments map_on_inv [A B f x y].
 
 Lemma option_map_none_inv : forall A B (f : A -> B) o,
   map f o = None -> o = None.

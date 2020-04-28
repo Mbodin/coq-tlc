@@ -377,10 +377,10 @@ Lemma trans_sym_2 : forall A (y x z : A) R,
   trans R -> sym R -> R x y -> R z y -> R x z.
 Proof using. introv Tr Sy R1 R2. apply* Tr. Qed.
 
-Implicit Arguments trans_elim [A x z R].
-Implicit Arguments trans_sym [A x z R].
-Implicit Arguments trans_sym_1 [A x z R].
-Implicit Arguments trans_sym_2 [A x z R].
+Arguments trans_elim [A] _ [x z R].
+Arguments trans_sym [A] _ [x z R].
+Arguments trans_sym_1 [A] _ [x z R].
+Arguments trans_sym_2 [A] _ [x z R].
 
 (** Other forms of transitivity *)
 

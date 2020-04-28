@@ -314,7 +314,7 @@ End Sorted.
 (* ---------------------------------------------------------------------- *)
 (** ** Properties about sorted *)
 
-Implicit Arguments sorted [A].
+Arguments sorted [A].
 Hint Unfold rsorted.
 
 Section SortedProperties.

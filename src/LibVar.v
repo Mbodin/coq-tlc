@@ -219,13 +219,13 @@ Lemma notin_var_gen : forall E F,
   (var_gen E) \notin F.
 Proof using. intros. autos~ var_gen_spec. Qed.
 
-Implicit Arguments notin_singleton_r    [x y].
-Implicit Arguments notin_singleton_l    [x y].
-Implicit Arguments notin_singleton_swap [x y].
-Implicit Arguments notin_union_r  [x E F].
-Implicit Arguments notin_union_r1 [x E F].
-Implicit Arguments notin_union_r2 [x E F].
-Implicit Arguments notin_union_l  [x E F].
+Arguments notin_singleton_r [x y].
+Arguments notin_singleton_l [x y].
+Arguments notin_singleton_swap [x y].
+Arguments notin_union_r [x E F].
+Arguments notin_union_r1 [x E F].
+Arguments notin_union_r2 [x E F].
+Arguments notin_union_l [x E F].
 
 (** Tactics to deal with notin.  *)
 
@@ -393,14 +393,14 @@ Proof using.
   introv Fr. rewrite* <- (fresh_length _ _ _ Fr).
 Qed.
 
-Implicit Arguments fresh_union_r [xs L1 L2 n].
-Implicit Arguments fresh_union_r1 [xs L1 L2 n].
-Implicit Arguments fresh_union_r2 [xs L1 L2 n].
-Implicit Arguments fresh_union_l [xs L1 L2 n].
-Implicit Arguments fresh_empty  [L n xs].
-Implicit Arguments fresh_length [L n xs].
-Implicit Arguments fresh_resize [L n xs].
-Implicit Arguments fresh_resize_length [L n xs].
+Arguments fresh_union_r [xs L1 L2 n].
+Arguments fresh_union_r1 [xs L1 L2 n].
+Arguments fresh_union_r2 [xs L1 L2 n].
+Arguments fresh_union_l [xs L1 L2 n].
+Arguments fresh_empty [L n xs].
+Arguments fresh_length [L n xs].
+Arguments fresh_resize [L n xs].
+Arguments fresh_resize_length [L n xs].
 
 Lemma fresh_single_notin : forall x xs n,
   fresh \{x} n xs ->

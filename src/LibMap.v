@@ -295,7 +295,7 @@ Proof using.
   set_prove_setup true. tests*: (x = i). (* todo: improve "set_prove" ? *)
 Qed.
 
-Implicit Arguments dom_update_index [A B [H]].
+Arguments dom_update_index [A] _ [B] {H}.
 
 Lemma dom_update_index' : (* TODO: needed? *)
   forall A `{Inhab B} (M M' : map A B) (D : set A) x v,
@@ -523,7 +523,7 @@ Proof using.
   set_norm. auto. (* todo: "set_norm*" *)
 Qed.
 
-Implicit Arguments index_remove_one_in [A B].
+Arguments index_remove_one_in [A B].
 
 Lemma update_remove_one_eq : forall A `{Inhab B} (m:map A B) (i:A) (v:B),
   (m[i:=v] \- \{i}) = (m \- \{i}).

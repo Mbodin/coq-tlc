@@ -180,7 +180,7 @@ Proof using. split~. Qed.
 Lemma int_downto_wf : forall n, wf (downto n).
 Proof using.
   intros b n.
-  induction_wf: (measure_wf (fun n => Zabs_nat (n-b))) n.
+  induction_wf: (measure_wf (fun n => Z.abs_nat (n-b))) n.
   apply Acc_intro. introv [H1 H2]. apply IH.
   unfolds. applys Zabs_nat_lt; math.
 Qed.
@@ -210,7 +210,7 @@ Proof using. split~. Qed.
 Lemma int_upto_wf : forall n, wf (upto n).
 Proof using.
   intros b n.
-  induction_wf: (measure_wf (fun n => Zabs_nat (b-n))) n.
+  induction_wf: (measure_wf (fun n => Z.abs_nat (b-n))) n.
   apply Acc_intro. introv [H1 H2]. apply IH.
   applys Zabs_nat_lt; math.
 Qed.
@@ -355,9 +355,9 @@ Proof using.
   intros. apply~ @lexico3_wf. apply~ @lexico2_wf.
 Qed.
 
-Implicit Arguments lexico2_wf [[A1] [A2] R1 R2].
-Implicit Arguments lexico3_wf [[A1] [A2] [A3] R1 R2 R3].
-Implicit Arguments lexico4_wf [[A1] [A2] [A3] [A4] R1 R2 R3 R4].
+Arguments lexico2_wf {A1 A2} [R1 R2].
+Arguments lexico3_wf {A1 A2 A3} [R1 R2 R3].
+Arguments lexico4_wf {A1 A2 A3 A4} [R1 R2 R3 R4].
 
 Hint Resolve @lexico2_wf @lexico3_wf @lexico4_wf : wf.
 

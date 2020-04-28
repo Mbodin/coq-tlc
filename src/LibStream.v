@@ -237,6 +237,6 @@ Proof using.
   destruct H1. destruct H2. fequals. apply* IHn1.
 Qed.
 
-Implicit Arguments first_st_at_unique [n1 n2 A P s].
+Arguments first_st_at_unique [n1 n2 A P s].
 
 

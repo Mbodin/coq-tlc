@@ -518,11 +518,11 @@ Proof using. intros. apply in_union_r. apply~ in_union_get_4. Qed.
 
 End InUnionGet.
 
-Implicit Arguments in_union_get_1 [A x l1 l2].
-Implicit Arguments in_union_get_2 [A x l1 l2 l3].
-Implicit Arguments in_union_get_3 [A x l1 l2 l3 l4].
-Implicit Arguments in_union_get_4 [A x l1 l2 l3 l4 l5].
-Implicit Arguments in_union_get_5 [A x l1 l2 l3 l4 l5 l6].
+Arguments in_union_get_1 [A x l1 l2].
+Arguments in_union_get_2 [A x l1 l2 l3].
+Arguments in_union_get_3 [A x l1 l2 l3 l4].
+Arguments in_union_get_4 [A x l1 l2 l3 l4 l5].
+Arguments in_union_get_5 [A x l1 l2 l3 l4 l5 l6].
 
 (** [in_union_get] solves a goal of the form
     [x \in F1 \u ... \u FN] when there exists an
@@ -669,8 +669,8 @@ Proof using. introv H. rewrite @in_union_eq in H. auto. typeclass. Qed.
 
 End InUnionInv.
 
-Implicit Arguments in_single_inv [A x y].
-Implicit Arguments in_union_inv [A x l1 l2].
+Arguments in_single_inv [A x y].
+Arguments in_union_inv [A x l1 l2].
 
 Ltac multiset_in_inv_base H M :=
   match type of H with
@@ -693,7 +693,7 @@ Lemma union_empty_inv_multiset : forall A (l1 l2:multiset A),
   l1 \u l2 = \{} -> l1 = \{} /\ l2 = \{}.
 Proof using. intros. eapply union_empty_inv_inst. eauto. Qed.
 
-Implicit Arguments union_empty_inv_multiset [A l1 l2].
+Arguments union_empty_inv_multiset [A l1 l2].
 
 Ltac multiset_empty_core H :=
   match type of H with

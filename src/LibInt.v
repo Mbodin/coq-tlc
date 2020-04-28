@@ -21,7 +21,7 @@ Open Scope comp_scope.
 Notation "'int'" := Z : Int_scope.
 
 Infix "+" := Zplus : Int_scope.
-Notation "- x" := (Zopp x) : Int_scope.
+Notation "- x" := (Z.opp x) : Int_scope.
 Infix "-" := Zminus : Int_scope.
 Infix "*" := Zmult : Int_scope.
 
@@ -106,30 +106,30 @@ Qed.
 (* ********************************************************************** *)
 (** * Order on numbers *)
 
-Instance le_int_inst : Le int := Build_Le Zle.
+Instance le_int_inst : Le int := Build_Le Z.le.
 
 
 (* ---------------------------------------------------------------------- *)
 (** ** Relation to Peano, for tactic [omega] *)
 
-Lemma le_zarith : le = Zle.
+Lemma le_zarith : le = Z.le.
 Proof using. extens*. Qed.
 
 Global Opaque le_int_inst.
 
-Lemma lt_zarith : lt = Zlt.
+Lemma lt_zarith : lt = Z.lt.
 Proof using.
   extens. rew_to_le. rewrite le_zarith.
   unfold strict. intros. omega.
 Qed.
 
-Lemma ge_zarith : ge = Zge.
+Lemma ge_zarith : ge = Z.ge.
 Proof using.
   extens. rew_to_le. rewrite le_zarith.
   unfold flip. intros. omega.
 Qed.
 
-Lemma gt_zarith : gt = Zgt.
+Lemma gt_zarith : gt = Z.gt.
 Proof using.
   extens. rew_to_le. rewrite le_zarith.
   unfold strict, flip. intros. omega.
@@ -224,11 +224,11 @@ Lemma Z_of_nat_O :
 Proof using. reflexivity. Qed.
 
 Lemma Z_of_nat_S : forall n,
-  Z_of_nat (S n) = Zsucc (Z_of_nat n).
+  Z_of_nat (S n) = Z.succ (Z_of_nat n).
 Proof using. intros. rewrite~ <- Zpos_P_of_succ_nat. Qed.
 
 Lemma Z_of_nat_plus1 : forall n,
-  Z_of_nat (1 + n) = Zsucc (Z_of_nat n).
+  Z_of_nat (1 + n) = Z.succ (Z_of_nat n).
 Proof using. intros. rewrite <- Z_of_nat_S. fequals~. Qed.
 
 (** [rew_maths] rewrite any lemma in the base [rew_maths].
@@ -646,9 +646,9 @@ Tactic Notation "rew_int" "*" "in" hyp(H) :=
 
 (** Proofs below using stdlib *)
 
-Notation "'abs'" := Zabs_nat (at level 0).
+Notation "'abs'" := Z.abs_nat (at level 0).
 
-Global Opaque Zabs Zabs_nat.
+Global Opaque Z.abs Z.abs_nat.
 
 Lemma abs_pos_nat : forall n : nat,
   abs n = n.
@@ -658,7 +658,7 @@ Lemma abs_pos : forall n : int,
   n >= 0 -> abs n = n :> int.
 Proof using.
   intros. rewrite inj_Zabs_nat.
-  rewrite Zabs_eq. math. math.
+  rewrite Z.abs_eq. math. math.
 Qed.
 
 (* TODO: make names below more uniform *)
@@ -790,7 +790,7 @@ Proof using. (* using stdlib *)
   lets [E1 E2]: (mod2_bound n). math.
 Qed.
 
-Implicit Arguments div2_bounds [m n].
+Arguments div2_bounds [m n].
 
 Hint Rewrite mod2_zero mod2_odd mod2_even div2_odd div2_even : rew_parity.
 
@@ -872,7 +872,7 @@ Qed.
 
 Lemma pow2_succ : forall n, n >= 0 -> 2^(n+1) = 2*2^n.
 Proof using.
-  intros. math_rewrite (n+1 = Zsucc n).
+  intros. math_rewrite (n+1 = Z.succ n).
   rewrite Zpower_Zsucc; math.
 Qed.
 

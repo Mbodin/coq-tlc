@@ -10,8 +10,8 @@ Generalizable Variables A B.
 (* ********************************************************************** *)
 (** * Fixing implicit types *)
 
-Implicit Arguments inl [[A] [B]].
-Implicit Arguments inr [[A] [B]].
+Arguments inl {A B}.
+Arguments inr {A B}.
 
 
 (* ********************************************************************** *)
@@ -80,8 +80,8 @@ Definition get22 x :=
 
 End Get.
 
-Implicit Arguments get21 [[A1] [A2] [DA1]].
-Implicit Arguments get22 [[A1] [A2] [DA2]].
+Arguments get21 {A1 A2 DA1}.
+Arguments get22 {A1 A2 DA2}.
 
 
 (*-----------------------------------------------------*)
@@ -99,6 +99,6 @@ Definition func_get22 f :=
 
 End Fget.
 
-Implicit Arguments func_get21 [[A1] [A2] [B1] [B2] [DB1]].
-Implicit Arguments func_get22 [[A1] [A2] [B1] [B2] [DB2]].
+Arguments func_get21 {A1 A2 B1 B2 DB1}.
+Arguments func_get22 {A1 A2 B1 B2 DB2}.
 
