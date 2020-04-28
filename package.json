@@ -7,7 +7,7 @@
 		"buildsInSource": "_build",
 		"buildEnv": {
 			"COQBIN": "#{@opam/coq.bin}/",
-			"CONTRIB": "#{self.install}"
+			"CONTRIB": "#{self.install}/coq"
 		},
 		"build": "make",
 		"install": [
